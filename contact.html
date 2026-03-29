@@ -67,7 +67,8 @@
                     <textarea placeholder="Your Message" rows="4" required></textarea>
 
                     <button type="submit">🚀 Send Message</button>
-                    <div class="success-msg contact-success">✅ Thank you for contacting us. We will get back to you shortly.</div>
+                    <div class="success-msg contact-success">✅ Thank you for contacting us. We will get back to you
+                        shortly.</div>
                 </form>
 
             </div>
@@ -134,8 +135,45 @@
             <p>© 2026 InteriorFlow. All rights reserved.</p>
         </div>
     </footer>
+    <div class="demo-popup" id="demoPopup">
+
+        <div class="demo-box">
+
+            <!-- Left Image -->
+            <div class="demo-image">
+                <img src="images/interior.jpg" alt="demo">
+            </div>
+
+            <!-- Right Form -->
+            <div class="demo-content">
+
+                <span class="close-btn">&times;</span>
+
+                <h2>Request a Demo</h2>
+                <form id="demoForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" maxlength="10" id="phone" placeholder="Phone Number" required>
+                    <button type="submit">🚀 Submit Request</button>
+                    <div class="success-msg">
+                        ✅ Request submitted successfully!
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+
+            </div>
+
+        </div>
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.getElementById("phone").addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+    </script>
 </body>
 
 </html>

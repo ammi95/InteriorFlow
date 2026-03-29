@@ -335,8 +335,7 @@
 
             <!-- Left Image -->
             <div class="demo-image">
-                <img src="images/interior.jpg"
-                    alt="demo">
+                <img src="images/interior.jpg" alt="demo">
             </div>
 
             <!-- Right Form -->
@@ -364,6 +363,11 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.getElementById("phone").addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+        });
+    </script>
 </body>
 
 </html>

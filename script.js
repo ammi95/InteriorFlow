@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     $("#contactForm").submit(function (e) {
         e.preventDefault();
-        let phone = $("#contactPhone").val().replace(/\D/g, '');
+        let phone = $("#contactPhone").val().replace(/[^0-9]/g, "").slice(0, 10);;
 
         if (phone.length !== 10) {
             $(".error-msg").fadeIn();
@@ -61,7 +61,7 @@ $(document).ready(function () {
     $("#signupForm").submit(function (e) {
         e.preventDefault();
 
-        let phone = $("#signupPhone").val().replace(/\D/g, '');
+        let phone = $("#signupPhone").val().replace(/[^0-9]/g, "").slice(0, 10);
 
         if (phone.length !== 10) {
             alert("Enter valid 10-digit phone number");
@@ -132,4 +132,15 @@ var swiper = new Swiper(".showcaseSlider", {
         delay: 2500,
         disableOnInteraction: false,
     },
+});
+document.querySelectorAll(".toggle-password").forEach(icon => {
+    icon.addEventListener("click", function () {
+        const input = this.parentElement.querySelector("input");
+
+        const type = input.type === "password" ? "text" : "password";
+        input.type = type;
+
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
 });
